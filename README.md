@@ -1,2 +1,2 @@
 # checkmk
-all around checkmk
+some stuff i need for checkmk
