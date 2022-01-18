@@ -1,5 +1,4 @@
 #!/bin/bash
-# create by Dennis Suhl
 
 # define variables
 site=$(omd sites --bare)
