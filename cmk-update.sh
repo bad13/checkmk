@@ -5,8 +5,6 @@
 # check the installed release and codename, define variables to build the url-string
 current_release="$(lsb_release -rs)"# rs = release in short description
 current_codename="$(lsb_release -cs)"_amd64.deb # cs = codename in short description
-
-# define variables
 site=$(omd sites --bare)
 current_version=$(omd version --bare)
 
