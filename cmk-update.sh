@@ -1,6 +1,10 @@
 #!/bin/bash
 # create by Dennis Suhl
-# version 0.1 (11.10.21)
+# version 1.0 (18.01.2022)
+
+# check the installed release and codename, define variables to build the url-string
+current_release="$(lsb_release -rs)"# rs = release in short description
+current_codename="$(lsb_release -cs)"_amd64.deb # cs = codename in short description
 
 # define variables
 site=$(omd sites --bare)
@@ -17,11 +21,11 @@ subpatchlevel=_0 # set this to your desired subpatchlevel - normally always _0
 
 # download the desired cmk-server-version from cmk-website
 echo -e "\e[1;42m DOWNLOAD CHECKMK-SERVER \e[0m"
-wget https://download.checkmk.com/checkmk/2.0.0p$patchlevel/check-mk-raw-2.0.0p$patchlevel$subpatchlevel.focal_amd64.deb
+wget https://download.checkmk.com/checkmk/2.0.0p$patchlevel/check-mk-raw-2.0.0p$patchlevel$subpatchlevel.$current_codename
 
 # installation cmk-server raw edition
 echo -e "\e[1;42m INSTALL CHECKMK-SERVER \e[0m"
-apt install -y ./check-mk-raw-2.0.0p$patchlevel$subpatchlevel.focal_amd64.deb
+apt install -y ./check-mk-raw-2.0.0p$patchlevel$subpatchlevel.$current_codename
 
 # stop the current running cmk-site
 echo -e "\e[1;42m STOP SITE \e[0m" $site
