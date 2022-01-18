@@ -1,5 +1,5 @@
 #!/bin/bash
-# create by Dennis Suhl
+# create by me
 # version 1.0 (18.01.2022)
 
 # check the installed release and codename, define variables to build the url-string
