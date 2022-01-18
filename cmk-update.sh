@@ -41,7 +41,7 @@ omd start $site
 
 # download the agent from the master-site in azure
 echo -e "\e[1;42m DOWNLOAD CHECKMK-AGENT \e[0m"
-wget https://mon.azure.pkd.haus/azure/check_mk/agents/check-mk-agent_2.0.0p$patchlevel-1_all.deb
+wget https://servername/mastersitename/check_mk/agents/check-mk-agent_2.0.0p$patchlevel-1_all.deb
 
 # installation cmk-agent
 echo -e "\e[1;42m INSTALL CHECKMK-AGENT \e[0m"
