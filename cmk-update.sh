@@ -3,7 +3,7 @@
 # version 1.1 (30.01.2022)
 
 # check the installed release and codename, define variables to build the url-string
-current_release="$(lsb_release -rs)"# rs = release in short description
+# current_release="$(lsb_release -rs)"# rs = release in short description
 current_codename="$(lsb_release -cs)"_amd64.deb # cs = codename in short description
 site=$(omd sites --bare)
 current_version=$(omd version --bare)
@@ -14,7 +14,7 @@ echo -e "\e[1;46m INFO: Auf diesem Server läuft die Site $site in der Version $
 echo -e
 
 # set patchlevel and sublevel for setting download urls
-patchlevel=15 # set this to your desired patchlevel
+patchlevel=19 # set this to your desired patchlevel
 subpatchlevel=_0 # set this to your desired subpatchlevel - normally always _0
 
 # download the desired cmk-server-version from cmk-website
@@ -37,16 +37,14 @@ omd -f update --conflict=install $site
 echo -e "\e[1;42m START SITE \e[0m" $site
 omd start $site
 
-# download the agent from the master-site in azure
-echo -e "\e[1;42m DOWNLOAD CHECKMK-AGENT \e[0m"
-wget https://servername/mastersitename/check_mk/agents/check-mk-agent_2.0.0p$patchlevel-1_all.deb
+# define variables
+new_version=$(omd version --bare)
 
 # installation cmk-agent
 echo -e "\e[1;42m INSTALL CHECKMK-AGENT \e[0m"
-apt install -y ./check-mk-agent_2.0.0p$patchlevel-1_all.deb
-
-# define variables
-new_version=$(omd version --bare)
+patchlevel=19 # set this to your desired patchlevel
+cd /opt/omd/versions/$new_version/share/check_mk/agents
+sudo apt install -y ./check-mk-agent_2.0.0p$patchlevel-1_all.deb
 
 # giving some short infos
 echo -e
