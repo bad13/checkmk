@@ -1,6 +1,6 @@
 #!/bin/bash
 # create by me
-# version 1.0 (18.01.2022)
+# version 1.1 (30.01.2022)
 
 # check the installed release and codename, define variables to build the url-string
 current_release="$(lsb_release -rs)"# rs = release in short description
