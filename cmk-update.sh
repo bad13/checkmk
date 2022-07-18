@@ -14,16 +14,16 @@ echo -e "\e[1;46m INFO: Auf diesem Server läuft die Site $site in der Version $
 echo -e
 
 # set patchlevel and sublevel for setting download urls
-patchlevel=19 # set this to your desired patchlevel
+patchlevel=6 # set this to your desired patchlevel
 subpatchlevel=_0 # set this to your desired subpatchlevel - normally always _0
 
 # download the desired cmk-server-version from cmk-website
 echo -e "\e[1;42m DOWNLOAD CHECKMK-SERVER \e[0m"
-wget https://download.checkmk.com/checkmk/2.0.0p$patchlevel/check-mk-raw-2.0.0p$patchlevel$subpatchlevel.$current_codename
+wget https://download.checkmk.com/checkmk/2.0.0p$patchlevel/check-mk-raw-2.1.0p$patchlevel$subpatchlevel.$current_codename
 
 # installation cmk-server raw edition
 echo -e "\e[1;42m INSTALL CHECKMK-SERVER \e[0m"
-apt install -y ./check-mk-raw-2.0.0p$patchlevel$subpatchlevel.$current_codename
+apt install -y ./check-mk-raw-2.1.0p$patchlevel$subpatchlevel.$current_codename
 
 # stop the current running cmk-site
 echo -e "\e[1;42m STOP SITE \e[0m" $site
@@ -42,9 +42,9 @@ new_version=$(omd version --bare)
 
 # installation cmk-agent
 echo -e "\e[1;42m INSTALL CHECKMK-AGENT \e[0m"
-patchlevel=19 # set this to your desired patchlevel
+patchlevel=6 # set this to your desired patchlevel
 cd /opt/omd/versions/$new_version/share/check_mk/agents
-sudo apt install -y ./check-mk-agent_2.0.0p$patchlevel-1_all.deb
+sudo apt install -y ./check-mk-agent_2.1.0p$patchlevel-1_all.deb
 
 # giving some short infos
 echo -e
