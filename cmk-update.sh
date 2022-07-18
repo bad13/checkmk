@@ -19,7 +19,7 @@ subpatchlevel=_0 # set this to your desired subpatchlevel - normally always _0
 
 # download the desired cmk-server-version from cmk-website
 echo -e "\e[1;42m DOWNLOAD CHECKMK-SERVER \e[0m"
-wget https://download.checkmk.com/checkmk/2.0.0p$patchlevel/check-mk-raw-2.1.0p$patchlevel$subpatchlevel.$current_codename
+wget https://download.checkmk.com/checkmk/2.1.0p$patchlevel/check-mk-raw-2.1.0p$patchlevel$subpatchlevel.$current_codename
 
 # installation cmk-server raw edition
 echo -e "\e[1;42m INSTALL CHECKMK-SERVER \e[0m"
