@@ -17,12 +17,12 @@ echo -e
 
 # doing a backup before update
 echo -e "\e[1;42m DOING A BACKUP \e[0m"
-date=$(date +"%F")
+date= $(date +%d%m%y_%H:%M:%S)
 sudo touch backup-cmk-$current_version-$date
 sudo omd stop $site
 sudo omd backup $site backup-cmk-$current_version-$date
 sudo omd start $site
-sudo mv backup-cmk-$current_version-$date backup-cmk-$current_version-$date_latest
+#sudo mv backup-cmk-$current_version-$date backup-cmk-$current_version-$date_latest
 
 # set patchlevel and sublevel for setting download urls
 patchlevel=19 # set this to your desired patchlevel
