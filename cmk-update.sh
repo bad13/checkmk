@@ -4,8 +4,6 @@
 # version 1.1 (24.08.2022) add omd cleanup
 # version 1.2 (26.08.2022) add omd backup
 
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDXVVPX8gdhrlJ1mvEqpYr2ivOzn8bGOkzFHxzK9aJpYjzi9IJNVGRkZ7F043uDU7K05yAU53w1grKt0lXlyOmHQ3dScJ62UNX0tc/Cg5q5zkYSo9cHxYTE4kj7CN9pGmkBFu6T8uj6uN73C4jTZVrYFGaj+GQOKm3WWADBnPeRWAAKZYlAky0KByKz2+KiEBfAOy4i+T3ciKse0fjhE3pM1MYB6my8o20P6zc8GVSs0CA6CdpgaYSj7O6XoNCt2xv3BsfTwNRZbcUF+vLqJg3vNTnledzPf1/Hy1CvE7xhdEfA9jqa7PNWnyUXnrxSyAIG8Trc3pMRs1QK6Y9alO/78wAT4YTK6bZ9cSrYQhbkF+yGHvK0kqkQBSZK2jzLrCkGSFJOaykTDIoQMLSqOzhDvkLMqX5Snl2J4dKBBIdY68loicXhrAotQ+bpflYDiLVBBWfeKbKmPNmRG9rCjQTfrJJCbOqm6/yd6vLb5g8nIPZ3bACZY1FjKr58lWB6z/8= ansible-user
-
 # check the installed release and codename, define variables to build the url-string
 #current_release="$(lsb_release -rs)"# rs = release in short description
 current_codename="$(lsb_release -cs)"_amd64.deb # cs = codename in short description
