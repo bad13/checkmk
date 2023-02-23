@@ -105,7 +105,7 @@ try:
                                             for subitem in statusLoad[item]:
                                                 if subitem == "state":
                                                     channelState=statusLoad[item][subitem]
-                                                    print(("%s %s %s %s %s %s %s" % ( finalDict[channel['channelId']], channelState, channel['received'], channel['error'], channel['filtered'], channel['queued'], channel['sent'])
+                                                    print(("%s %s %s %s %s %s %s" % ( finalDict[channel['channelId']], channelState, channel['received'], channel['error'], channel['filtered'], channel['queued'], channel['sent'])))
 
 except Exception as  e:
     sys.stderr.write(str(e))
