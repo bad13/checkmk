@@ -34,7 +34,6 @@ wget https://download.checkmk.com/checkmk/2.2.0p$patchlevel/check-mk-raw-2.2.0p$
 
 # installation cmk-server raw edition
 echo -e "\e[1;42m INSTALL CHECKMK-SERVER \e[0m"
-sudo apt install -y ./check-mk-raw-2.1.0p$patchlevel$subpatchlevel.$current_codename
 
 # stop the current running cmk-site
 echo -e "\e[1;42m STOP SITE \e[0m" $site
