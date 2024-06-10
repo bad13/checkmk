@@ -17,7 +17,7 @@
 # MIGRACAO_v2_4 STOPPED 0 0 0 0 0
 
 factory_settings['mirth_stats'] = {
-        'mirth_error': ( 2, 4 ),
+        'mirth_error': ( 10, 20 ),
         'mirth_queued': ( 10, 20 ),
 }
 
@@ -46,9 +46,11 @@ def check_mirth_stats(item, params, info):
                         if int(line[3]) >= int(err_crit):
                                 status_code = 2
                                 err_outmessage = "Error : %s (!!)" % ( line[3] )
+
                         elif int(line[3]) >= int(err_warn):
                                 status_code = max(1, status_code)
                                 err_outmessage = "Error : %s (!)" % ( line[3] )
+
                         else:
                                 status_code = max(0, status_code)
                                 err_outmessage = "Error : %s" % ( line[3] )
@@ -56,6 +58,7 @@ def check_mirth_stats(item, params, info):
                         if int(line[5]) >= int(que_crit):
                                 status_code = 2
                                 que_outmessage = "Queued : %s (!!)" % ( line[5] )
+
                         elif int(line[5]) >= int(que_warn):
                                 status_code = max(1, status_code)
                                 que_outmessage = "Queued : %s (!)" % ( line[5] )
