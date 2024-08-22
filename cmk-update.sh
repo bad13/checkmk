@@ -25,7 +25,7 @@ sudo omd start $site
 #sudo mv backup-cmk-$current_version-$date backup-cmk-$current_version-$date_latest
 
 # set patchlevel and sublevel for setting download urls
-patchlevel=27 # set this to your desired patchlevel
+patchlevel=46 # set this to your desired patchlevel
 subpatchlevel=_0 # set this to your desired subpatchlevel - normally always _0
 
 # download the desired cmk-server-version from cmk-website
@@ -52,7 +52,7 @@ new_version=$(omd version --bare)
 
 # installation cmk-agent
 echo -e "\e[1;42m INSTALL CHECKMK-AGENT \e[0m"
-patchlevel=27
+patchlevel=46
 cd /opt/omd/versions/$new_version/share/check_mk/agents
 sudo apt install -y ./check-mk-agent_2.2.0p$patchlevel-1_all.deb
 
